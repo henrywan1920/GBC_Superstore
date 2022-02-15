@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS orders (
     quantity INT NOT NULL,
     discount DECIMAL(3, 2) NOT NULL,
     profit DECIMAL(7, 4) NOT NULL,
-    PRIMARY KEY (order_id)
+    PRIMARY KEY (order_id, customer_id, product_id, postal_code)
 );
 
 /* Create table Returns */
