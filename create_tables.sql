@@ -49,10 +49,10 @@ CREATE TABLE IF NOT EXISTS orders (
     customer_id VARCHAR(64) NOT NULL REFERENCES customers (order_id),
     product_id VARCHAR(64) NOT NULL REFERENCES products (product_id),
     postal_code VARCHAR(5) NOT NULL REFERENCES address (postal_code),
-    sales DECIMAL(7, 4) NOT NULL,
+    sales DECIMAL(8, 4) NOT NULL,
     quantity INT NOT NULL,
     discount DECIMAL(3, 2) NOT NULL,
-    profit DECIMAL(7, 4) NOT NULL,
+    profit DECIMAL(8, 4) NOT NULL,
     PRIMARY KEY (order_id, customer_id, product_id, postal_code)
 );
 
@@ -61,4 +61,4 @@ CREATE TABLE IF NOT EXISTS returns (
 	order_id VARCHAR(64) NOT NULL REFERENCES orders (order_id),
     product_id VARCHAR(64) NOT NULL REFERENCES products (product_id),
     PRIMARY KEY (order_id, product_id)
-)
+);
